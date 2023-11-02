@@ -86,8 +86,3 @@ public class CustomCameraManager : CameraManager, ICustomCameraManager
         else FieldOfView = fov;
     }
 }
-
-public interface ICustomCameraManager : ICameraManager
-{
-    float FieldOfView { get; set; }
-}
