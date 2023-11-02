@@ -6,11 +6,11 @@ An example on how to override Scene Assistant with custom data.
 
 This example overrides CameraManager with a **FieldOfView** property that lets you freely adjust the Field of View and Orthographic Size properties of the main Naninovel camera. SceneAssistantManager is then overridden with a custom CameraData that exposes this value. See **CustomSceneAssistantManager.cs** and **CustomCameraData.cs** for more information. 
 # Setup
-Place the folders anywhere in the project (that is not managed by another plugin, including the Naninovel and NaninovelData folders).
+Place the SceneAssistantCustomDataExample anywhere in the project (that is not managed by another plugin, including the Naninovel and NaninovelData folders).
 
 # Sample Script
 
-The following script demonstrates the fov parameter in @camera:
+The following script demonstrates the fov parameter in **@camera**:
 
 ```
 @char Missingno pos:50,45
