@@ -39,7 +39,8 @@ public class CustomCameraData : CameraData
             // 6. Conditions. Optional parameter that can be used to conditionally display this data field. For example, if you want to only display this parameter
             // when the camera's Projection property is set to Perspective, you can add conditions:() => !customCameraManager.Orthographic. You can find working conditions in my PostProcessing extension.
 
-            fovData = new CommandParameterData<float>(Fov,
+            fovData = new CommandParameterData<float>(
+                Fov,
                 () => customCameraManager.FieldOfView,
                 v => customCameraManager.FieldOfView = (float)v,
                 (i, p) => i.FloatField(p, min: 0f, toggleGroup: new ToggleGroupData(zoomData)),

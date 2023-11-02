@@ -22,7 +22,14 @@ public class CustomCameraManager : CameraManager, ICustomCameraManager
     public override void ResetService()
     {
         base.ResetService();
-        FieldOfView = Camera.orthographicSize;
+        FieldOfView = Camera.orthographic ? Camera.orthographicSize : Camera.fieldOfView;
+    }
+
+    protected override Camera InitializeMainCamera(CameraConfiguration config, Transform parent, int uiLayer)
+    {
+        var camera = base.InitializeMainCamera(config, parent, uiLayer);
+        fieldOfView = camera.orthographic ? camera.orthographicSize : camera.fieldOfView;
+        return camera;
     }
 
     public override void SaveServiceState(GameStateMap stateMap)
